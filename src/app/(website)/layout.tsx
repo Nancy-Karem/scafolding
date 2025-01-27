@@ -56,7 +56,7 @@ export default function RootLayout({
           content="Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:url" content="https://thescaffolding.co.uk/" />
         <meta property="og:image" content="/assets/herocover.webp" />
 
         {/* Twitter Meta Tags */}
