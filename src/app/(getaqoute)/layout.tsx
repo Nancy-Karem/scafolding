@@ -5,10 +5,16 @@ import "aos/dist/aos.css";
 import WithAOS from "../ui/withAOS/WithAos";
 import "react-phone-input-2/lib/style.css";
 import Head from "next/head";
+import { Metadata } from "next";
 const urbanist = Urbanist({
   subsets: ["latin"], // Add other subsets if needed
   weight: ["100", "200", "300", "400", "500", "600", "700"], // Specify the font weights you need
 });
+export const metadata: Metadata = {
+  title: "Scafolding",
+  description: "Get in Touch | Inquery",
+  icons: "/svgs/logolap.svg",
+};
 export default function GetAQuoteLayout({
   children,
 }: {
