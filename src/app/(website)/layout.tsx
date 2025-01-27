@@ -41,7 +41,7 @@ export default function RootLayout({
           name="keywords"
           content="scaffolding, scaffolding UK, scaffolding services, construction scaffolding, reliable scaffolding, scaffolding for hire, UK scaffolding solutions"
         />
-        <meta name="author" content="Your Company Name" />
+        <meta name="author" content="Face2Face Scaffolding" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#ffffff" />
