@@ -5,6 +5,9 @@ import "../globals.css";
 import "aos/dist/aos.css";
 import Header from "../ui/common/header/Header";
 import WithAOS from "../ui/withAOS/WithAos";
+import Head from "next/head";
+
+// Lazy load non-critical components
 const Footer = React.lazy(() => import("../ui/common/footer/Footer"));
 
 const urbanist = Urbanist({
@@ -17,6 +20,33 @@ export const metadata: Metadata = {
   description:
     "Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs.",
   icons: "/svgs/logolap.svg",
+  openGraph: {
+    title: "Scaffolding in the UK | Reliable Scaffolding Services",
+    description:
+      "Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs.",
+    url: "https://thescaffolding.co.uk/",
+    siteName: "Face2Face Scaffolding",
+    images: [
+      {
+        url: "/assets/herocover.webp",
+        width: 1200,
+        height: 630,
+        alt: "Scaffolding Services in the UK",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scaffolding in the UK | Reliable Scaffolding Services",
+    description:
+      "Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs.",
+    images: ["/assets/herocover.webp"],
+  },
+  alternates: {
+    canonical: "https://thescaffolding.co.uk/",
+  },
 };
 
 export default function RootLayout({
@@ -26,56 +56,47 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
+        {/* Preload Critical Assets */}
         <link href="/assets/herocover.webp" as="image" rel="preload" />
-        {/* Meta Tags for SEO */}
-        <meta
-          name="title"
-          content="Scaffolding in the UK | Reliable Scaffolding Services"
-        />
-        <meta
-          name="description"
-          content="Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs."
+        <link
+          href={`https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700&display=swap`}
+          rel="stylesheet"
         />
         <meta
           name="keywords"
           content="scaffolding, scaffolding UK, scaffolding services, construction scaffolding, reliable scaffolding, scaffolding for hire, UK scaffolding solutions"
         />
-        <meta name="author" content="Face2Face Scaffolding" />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#ffffff" />
 
-        {/* Open Graph Meta Tags (for sharing on social media) */}
-        <meta
-          property="og:title"
-          content="Scaffolding in the UK | Reliable Scaffolding Services"
-        />
-        <meta
-          property="og:description"
-          content="Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://thescaffolding.co.uk/" />
-        <meta property="og:image" content="/assets/herocover.webp" />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Scaffolding in the UK | Reliable Scaffolding Services"
-        />
-        <meta
-          name="twitter:description"
-          content="Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs."
-        />
-        <meta name="twitter:image" content="/assets/herocover.webp" />
-      </head>
+        {/* Structured Data (Schema.org) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Face2Face Scaffolding",
+            image: "/assets/herocover.webp",
+            url: "https://thescaffolding.co.uk/",
+            telephone: "+44-123-456-7890",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "123 Scaffold Street",
+              addressLocality: "London",
+              postalCode: "SW1A 1AA",
+              addressCountry: "UK",
+            },
+            description:
+              "Professional scaffolding services in the UK for construction, maintenance, and more. Reliable, safe, and cost-effective solutions tailored to your needs.",
+            openingHours: "Mo-Fr 08:00-18:00",
+          })}
+        </script>
+      </Head>
       <body className={urbanist.className}>
         <WithAOS>
           <Header />
           {children}
-          <Footer />
+          <React.Suspense fallback={<div>Loading Footer...</div>}>
+            <Footer />
+          </React.Suspense>
         </WithAOS>
       </body>
     </html>

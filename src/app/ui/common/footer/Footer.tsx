@@ -153,11 +153,13 @@ function Footer() {
             © 2024 FACE2FACE <br />
             Proudly Designed by{" "}
             <Link
-              href="https://www.gonovo.tech/"
+              href="https://gonovo.tech/"
               className="text-black font-semibold hover:underline"
             >
               GONOVO
             </Link>
+            <br />
+            Terms & Conditions | Privacy Policy
           </p>
         </div>
       </div>
