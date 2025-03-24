@@ -8,20 +8,20 @@ const allProjects = [
     date: "29/10/2024",
   },
   {
-    image: "/assets/allpro2.webp",
-    category: "construct",
-    title: "SOGED 13 Allées des roses 95460 EZANVILLE",
-    description:
-      "Ensuring seamless construction progress with reliable scaffolding from the ground up.",
-    date: "25/10/2024",
-  },
-  {
     image: "/assets/allpro3.webp",
     category: "construct",
     title: "MICHEAL CORDONNIER 76 rue de faubourg Saint Antoine 75012 Paris",
     description:
       "Innovative scaffolding solutions designed for efficiency, safety, and modern construction demands.",
     date: "10/10/2024",
+  },
+  {
+    image: "/assets/allpro2.webp",
+    category: "construct",
+    title: "SOGED 13 Allées des roses 95460 EZANVILLE",
+    description:
+      "Ensuring seamless construction progress with reliable scaffolding from the ground up.",
+    date: "25/10/2024",
   },
   {
     image: "/assets/allpro4.webp",
