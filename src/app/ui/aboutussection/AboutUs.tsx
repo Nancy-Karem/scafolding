@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 import styles from "./responsive.module.css";
 function AboutUs() {
+  const expYears = new Date().getFullYear() - 2007;
+  const currentYear = new Date().getFullYear();
   return (
     <section
       className={`${styles.grid_Responsive} main_wrapper grid grid-cols-2 pt-16 md:pt-24 md:pb-[120px] pb-[85px]  overflow-hidden`}
@@ -32,27 +34,27 @@ function AboutUs() {
           className={`${styles.paragraph} inline-block text-[1.375rem] leading-[33px] lg:max-w-[609px] font-medium my-4 lg:mr-5`}
           data-aos="fade-up"
         >
-          Face2Face, with 18 years of excellence across Europe, now proudly
+          {`Face2Face, with ${expYears} years of excellence across Europe, now proudly
           brings its innovative scaffolding solutions to London. By utilizing
           100% metal materials, we ensure durable, sustainable, and cutting-edge
-          approaches to modern construction.
+          approaches to modern construction.`}
         </p>
         <p
           className={`${styles.paragraph} inline-block text-[1.375rem] leading-[33px] lg:max-w-[609px] font-medium my-4 lg:mr-5`}
           data-aos="fade-up"
         >
-          Safety has always been our cornerstone. Over 18 years, we have proudly
+          {`Safety has always been our cornerstone. Over ${expYears} years, we have proudly
           maintained a 0% accident rate thanks to our meticulous planning and
-          rigorous procedures, from assembly to dismantling.
+          rigorous procedures, from assembly to dismantling.`}
         </p>
         <p
           className={`${styles.paragraph} inline-block text-[1.375rem] leading-[33px] lg:max-w-[609px] max-w-full font-medium my-4 lg:mr-5`}
           data-aos="fade-up"
         >
-          Today, in 2025, we stand as a testament to the power of consistent
+          {`Today, in ${currentYear}, we stand as a testament to the power of consistent
           innovation and craftsmanship. Face2Face is more than a scaffolding
           company—we are a promise to deliver solutions that embody reliability
-          and sustainability.
+          and sustainability.`}
         </p>
         <div
           data-aos="fade-up"
