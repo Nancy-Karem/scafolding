@@ -59,6 +59,7 @@ export default function RootLayout({
       <Head>
         {/* Preload Critical Assets */}
         <link href="/assets/herocover.webp" as="image" rel="preload" />
+        <link rel="icon" href="/svgs/logolap.svg" type="image/svg+xml" />
         <link
           href={`https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700&display=swap`}
           rel="stylesheet"
